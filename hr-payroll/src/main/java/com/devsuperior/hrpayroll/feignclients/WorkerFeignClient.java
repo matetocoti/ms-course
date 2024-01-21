@@ -15,7 +15,7 @@ import com.devsuperior.hrpayroll.entities.Worker;
 
 
 @Component //Para indicar que é um componente gerenciado pelo spring ,E pode ser injetado em outras classes
-@FeignClient(name = "hr-worker" ,url = "localhost:8001" ,path = "/workers")
+@FeignClient(name = "hr-worker"  ,path = "/workers")
 public interface WorkerFeignClient {
 
 	@GetMapping(value = "/{id}")
