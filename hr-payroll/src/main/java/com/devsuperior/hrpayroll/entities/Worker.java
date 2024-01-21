@@ -29,7 +29,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @Getter
 @Setter
-@EqualsAndHashCode
+@EqualsAndHashCode(of = "id")
 @ToString
 public class Worker implements Serializable {
 

@@ -5,12 +5,7 @@ package com.devsuperior.hrpayroll.services;
 //--(IMPORTS)--//
 
 import org.springframework.stereotype.Service;
-
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-
-
 import com.devsuperior.hrpayroll.entities.Payment;
 import com.devsuperior.hrpayroll.entities.Worker;
 import com.devsuperior.hrpayroll.feignclients.WorkerFeignClient;
