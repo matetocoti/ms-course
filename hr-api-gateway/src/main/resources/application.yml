@@ -1,0 +1,34 @@
+server:
+  port: 8765
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8080/eureka
+
+spring:
+  main:
+    web-application-type: reactive
+  cloud:
+    gateway:
+      routes:
+        - id: hr-payroll
+          uri: lb://hr-payroll
+          predicates:
+            - Path=/payments/**
+        - id: hr-worker
+          uri: lb://hr-worker
+          predicates:
+            - Path=/workers/**
+   
+  application:
+    name: hr-api-gateway
+    
+
+    
+    
+    
+    
+    
