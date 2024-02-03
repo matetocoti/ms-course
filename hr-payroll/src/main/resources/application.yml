@@ -2,8 +2,10 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8080/eureka
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 server:
-  port: 8101
+  port: ${PORT:0} # Altere aqui para o valor padrão desejado
 spring:
   application:
     name: hr-payroll
