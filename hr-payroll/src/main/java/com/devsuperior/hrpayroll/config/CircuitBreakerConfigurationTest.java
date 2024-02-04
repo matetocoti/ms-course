@@ -5,6 +5,7 @@ package com.devsuperior.hrpayroll.config;
 //--(IMPORTS)--//
 import io.github.resilience4j.circuitbreaker.CircuitBreakerRegistry;
 
+import java.time.Duration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
