@@ -1,0 +1,14 @@
+spring:
+
+  application:
+    name: hr-config-server
+    
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:matetocoti/ms-course-configs.git
+          default-label: main
+
+server:
+  port: 8888

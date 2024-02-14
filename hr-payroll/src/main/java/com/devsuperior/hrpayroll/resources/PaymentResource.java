@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.devsuperior.hrpayroll.entities.Payment;
 import com.devsuperior.hrpayroll.services.PaymentService;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.timelimiter.annotation.TimeLimiter;
 
 
 //--(END)--//
@@ -28,9 +29,9 @@ public class PaymentResource {
 	@Autowired
 	private PaymentService paymentService;
 		
-	
+
 	public static final String PAYMENT_SERVICE="paymentService";
-	
+
 	
 	
 	@GetMapping(value = "/{workerId}/days/{days}")
@@ -46,6 +47,6 @@ public class PaymentResource {
 		return ResponseEntity.ok().body(payment);
 	}
 	
-	
+
 	
 }
