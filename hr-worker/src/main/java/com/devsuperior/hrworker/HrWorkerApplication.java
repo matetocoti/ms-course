@@ -11,6 +11,7 @@ public class HrWorkerApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(HrWorkerApplication.class, args);
+		
 	}
 
 }
