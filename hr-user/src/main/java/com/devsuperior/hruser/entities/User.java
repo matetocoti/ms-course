@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -35,8 +35,9 @@ public class User implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	
 	private String name;
+	
+	@Column(unique = true)
 	private String email;
 	private String password;
 	//--(END)--//
@@ -45,7 +46,8 @@ public class User implements Serializable{
 	@ManyToMany(fetch = FetchType.EAGER) //EAGER para que os dados dos perfis sejam automaticamente carregado junto ao do usuario							
 	@JoinTable(name = "tb_user_role" ,	//Tabela de associação de n x n
 		joinColumns = @JoinColumn(name = "user_id"),
-		inverseJoinColumns = @JoinColumn(name = "role_id"))
+		inverseJoinColumns = @JoinColumn(name = "role_id")
+	)
 	private Set<Role> roles = new HashSet<>();
 	
 	

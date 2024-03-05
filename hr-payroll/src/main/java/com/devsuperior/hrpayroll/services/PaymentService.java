@@ -19,7 +19,7 @@ public class PaymentService {
 	//Pegando minha propriedade adicional criado por mim no application.properties 
 	//@Value("${hr-worker.host}")
 	//private String workerHost;//E guardando em 1 variavel de tipo String
-	// jeito mais dificil sem Feign
+	// sem Feign
 	//@Autowired
 	//private RestTemplate restTemplate;
 	
