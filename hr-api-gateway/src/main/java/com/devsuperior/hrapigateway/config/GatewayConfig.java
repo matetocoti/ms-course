@@ -8,6 +8,7 @@ package com.devsuperior.hrapigateway.config;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestClient;
 import org.springframework.web.client.RestTemplate;
+import org.hibernate.validator.path.ContainerElementNode;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
@@ -36,13 +37,15 @@ public class GatewayConfig {
 	@Bean
 	RouteLocator myRoutes(RouteLocatorBuilder routeLocatorBuilder) {
 		return routeLocatorBuilder.routes()
-				
 				.route("worker-service", r -> r.path("/hr-worker/**")
 						.filters(f -> f.rewritePath("/hr-worker/(?<segment>.*)", "/$\\{segment}"))
 						.uri("lb://hr-worker"))
 				.route("hr-payroll", r -> r.path("/hr-payroll/**")	
 						.filters(f -> f.rewritePath("/hr-payroll/(?<segment>.*)", "/$\\{segment}"))
 						.uri("lb://hr-payroll"))
+				.route("hr-user" , r -> r.path("/hr-user/**")
+						.filters(f -> f.rewritePath("/hr-user/(?<segment>.*)" ,"/$\\{segment}"))
+						.uri("lb://hr-user"))
 				.build();	
 	}
 	
