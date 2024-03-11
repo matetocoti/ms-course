@@ -46,6 +46,9 @@ public class GatewayConfig {
 				.route("hr-user" , r -> r.path("/hr-user/**")
 						.filters(f -> f.rewritePath("/hr-user/(?<segment>.*)" ,"/$\\{segment}"))
 						.uri("lb://hr-user"))
+				.route("hr-oauth", r -> r.path("/hr-oauth/**")
+						.filters(f -> f.rewritePath("/hr-oauth/(?<segment>.*)", "/$\\{segment}"))
+						.uri("lb://hr-oauth"))
 				.build();	
 	}
 	
